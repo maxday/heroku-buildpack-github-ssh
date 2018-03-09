@@ -9,7 +9,7 @@ GITHUB_USER_NAME="$(cat $ENV_DIR/GITHUB_USER_NAME)"
 mkdir -p $1/.ssh
 echo $GITHUB_DEPLOY_PRIVATE_KEY | base64 --decode > "$1/.ssh/id_rsa" 
 ssh -o StrictHostKeyChecking=no $GITHUB_HOST
+
+touch $1/.gitconfig
 git config --global user.email $GITHUB_USER_EMAIL
 git config --global user.name $GITHUB_USER_NAME
-
-git config --list
