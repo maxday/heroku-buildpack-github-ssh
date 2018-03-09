@@ -1,3 +1,4 @@
+BUILD_DIR=$1
 ENV_DIR=$3
 
 GITHUB_DEPLOY_PRIVATE_KEY="$(cat $ENV_DIR/GITHUB_DEPLOY_PRIVATE_KEY)"
@@ -5,10 +6,8 @@ GITHUB_HOST="$(cat $ENV_DIR/GITHUB_HOST)"
 GITHUB_USER_EMAIL="$(cat $ENV_DIR/GITHUB_USER_EMAIL)"
 GITHUB_USER_NAME="$(cat $ENV_DIR/GITHUB_USER_NAME)"
 
-mkdir -p /app/.ssh
-ls -la /app
-echo $GITHUB_DEPLOY_PRIVATE_KEY | base64 --decode > "/app/.ssh/id_rsa" 
-ls -la /app
+mkdir -p $1/.ssh
+echo $GITHUB_DEPLOY_PRIVATE_KEY | base64 --decode > "$1/.ssh/id_rsa" 
 # ssh -o StrictHostKeyChecking=no $GITHUB_HOST
 git config --global user.email $GITHUB_USER_EMAIL
 git config --global user.name $GITHUB_USER_NAME
