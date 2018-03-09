@@ -1,24 +1,9 @@
-echo "---"
-echo "ENV DIR"
 ENV_DIR=$3
-echo $ENV_DIR
-echo "---"
-echo "GITHUB_DEPLOY_PRIVATE_KEY"
+
 GITHUB_DEPLOY_PRIVATE_KEY="$(cat $ENV_DIR/GITHUB_DEPLOY_PRIVATE_KEY)"
-echo $GITHUB_DEPLOY_PRIVATE_KEY
-echo "---"
-echo "GITHUB_HOST"
 GITHUB_HOST="$(cat $ENV_DIR/GITHUB_HOST)"
-echo $GITHUB_HOST
-echo "---"
-echo "GITHUB_USER_EMAIL"
 GITHUB_USER_EMAIL="$(cat $ENV_DIR/GITHUB_USER_EMAIL)"
-echo $GITHUB_USER_EMAIL
-echo "---"
-echo "GITHUB_USER_NAME"
 GITHUB_USER_NAME="$(cat $ENV_DIR/GITHUB_USER_NAME)"
-echo $GITHUB_USER_NAME
-echo "---"
 
 mkdir -p /app/.ssh
 echo $GITHUB_DEPLOY_PRIVATE_KEY | base64 --decode > "/app/.ssh/id_rsa" 
