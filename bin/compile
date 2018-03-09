@@ -22,3 +22,12 @@ ls -la
 
 echo $HOME
 
+ls -la $HOME
+
+ls -la $1
+
+ls -la $2
+
+ls -la $3
+
+
