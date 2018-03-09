@@ -10,24 +10,6 @@ mkdir -p $1/.ssh
 echo $GITHUB_DEPLOY_PRIVATE_KEY | base64 --decode > "$1/.ssh/id_rsa" 
 ssh -o StrictHostKeyChecking=no $GITHUB_HOST
 
-touch $1/.gitconfig
-git config user.email $GITHUB_USER_EMAIL
-git config user.name $GITHUB_USER_NAME
-
-cat $1/.gitconfig
-
-pwd 
-
-ls -la
-
-echo $HOME
-
-ls -la $HOME
-
-ls -la $1
-
-ls -la $2
-
-ls -la $3
-
-
+echo "[user]" >> $1/.gitconfig
+echo "        email = $GITHUB_USER_EMAIL" >> $1/.gitconfig
+echo "        name = $GITHUB_USER_NAME" >> $1/.gitconfig
