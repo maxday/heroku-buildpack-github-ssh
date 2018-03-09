@@ -18,4 +18,7 @@ cat $1/.gitconfig
 
 pwd 
 
-cat .gitconfig
+ls -la
+
+echo $HOME
+
