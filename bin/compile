@@ -1,4 +1,8 @@
 echo "---"
+echo "ENV DIR"
+ENV_DIR=${3:-}
+echo $ENV_DIR
+echo "---"
 echo "GITHUB_DEPLOY_PRIVATE_KEY"
 echo $GITHUB_DEPLOY_PRIVATE_KEY
 echo "---"
