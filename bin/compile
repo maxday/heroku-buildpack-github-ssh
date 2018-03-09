@@ -12,4 +12,4 @@ ssh -o StrictHostKeyChecking=no $GITHUB_HOST
 git config --global user.email $GITHUB_USER_EMAIL
 git config --global user.name $GITHUB_USER_NAME
 
-git config --global
+git config --list
