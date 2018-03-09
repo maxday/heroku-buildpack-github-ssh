@@ -1,0 +1,5 @@
+mkdir -p ~/.ssh
+echo $DEPLOY_PRIVATE_KEY | base64 --decode > "~/.ssh/id_rsa" 
+ssh -o StrictHostKeyChecking=no $GITHUB_URL
+git config --global user.email $GITHUB_EMAIL
+git config --global user.name $GITHUB_NAME

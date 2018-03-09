@@ -1,1 +1,1 @@
-# heroku-buildpack-ssh
+# heroku-buildpack-github-ssh
